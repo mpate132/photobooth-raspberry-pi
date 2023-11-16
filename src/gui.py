@@ -41,11 +41,10 @@ def submit():
   email_value = email_entry.get()
   number_value = number_entry.get()
   worksheet.insert_row([name_value, email_value, number_value], len(worksheet.get_all_records())+2)
- 
 
 # Creating the root for the tkinter
 root = Tk()
-root.geometry("1280x980")
+root.geometry("450x450")
 
 #Here i am going to add the background gif for the gui
 img = PIM.open("/home/robotics/photo-booth-project-2/assets/snow-blowing-winter.gif") 
@@ -53,7 +52,6 @@ ph = ImageTk.PhotoImage(img)
 gif = Label(root, image = ph, bg="black", bd=3)
 gif.image = ph
 framnr = img.n_frames
-
 frames = [PhotoImage(file="/home/robotics/photo-booth-project-2/assets/snow-blowing-winter.gif",
                 format = 'gif -index %i' %(i)) for i in range(framnr)]
 
